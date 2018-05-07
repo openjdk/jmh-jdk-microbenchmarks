@@ -126,7 +126,7 @@
     </build>
 
     <properties>
-        <jmh.version>1.17.2</jmh.version>
+        <jmh.version>1.21</jmh.version>
     </properties>
 
     <dependencies>
