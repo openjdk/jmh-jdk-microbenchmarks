@@ -60,6 +60,20 @@
             </modules>
         </profile>
         <profile>
+            <id>jdk11</id>
+            <activation>
+                <jdk>[11,)</jdk>
+            </activation>
+            <modules>
+                <module>micros-uber</module>
+                <module>micros-jdk8</module>
+                <module>micros-jdk9</module>
+                <module>micros-jdk11</module>
+                <module>micros-util</module>
+                <module>redefineagent</module>
+            </modules>
+        </profile>
+        <profile>
             <id>maven-3</id>
             <activation>
                 <file>
