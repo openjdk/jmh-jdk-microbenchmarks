@@ -137,6 +137,11 @@
             <version>${jmh.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.openjdk</groupId>
+            <artifactId>micros-util</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.openjdk.jmh</groupId>
             <artifactId>jmh-generator-annprocess</artifactId>
             <version>${jmh.version}</version>
