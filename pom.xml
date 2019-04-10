@@ -291,28 +291,6 @@
         </dependency>
     </dependencies>
 
-    <repositories>
-        <repository>
-            <id>Stockholm Repository</id>
-            <url>http://maven.se.oracle.com/nexus/content/groups/public</url>
-        </repository>
-    </repositories>
-
-    <!--
-        These artifactory servers are for working in the jpginfra system.
-    -->
-    <distributionManagement>
-        <repository>
-            <id>jpg.artifactory.central</id>
-            <name>jdk-deps-local-releases</name>
-            <url>https://java.se.oracle.com/artifactory/jdk-deps-local</url>
-        </repository>
-        <snapshotRepository>
-            <id>jpg.artifactory.snapshots</id>
-            <name>jdk-deps-local-snapshots</name>
-            <url>https://java.se.oracle.com/artifactory/jdk-deps-local</url>
-        </snapshotRepository>
-    </distributionManagement>
 </project>
 
 
