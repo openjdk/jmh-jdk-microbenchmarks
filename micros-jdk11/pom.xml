@@ -91,11 +91,11 @@
                                     <mainClass>org.openjdk.jmh.Main</mainClass>
                                 </transformer>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.IncludeResourceTransformer">
-                                    <resource>redefineagent-1.0-SNAPSHOT.zip</resource>
-                                    <file>../redefineagent/target/redefineagent-1.0-SNAPSHOT.zip</file>
+                                    <resource>redefineagent-${project.version}.zip</resource>
+                                    <file>../redefineagent/target/redefineagent-${project.version}.zip</file>
                                 </transformer>
                             </transformers>
-                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <createDependencyReducedPom>true</createDependencyReducedPom>
                         </configuration>
                     </execution>
                 </executions>
