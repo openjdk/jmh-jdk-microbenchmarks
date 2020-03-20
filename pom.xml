@@ -71,6 +71,7 @@
                 <module>micros-jdk11</module>
                 <module>micros-util</module>
                 <module>redefineagent</module>
+                <module>micros-javac</module>
             </modules>
         </profile>
         <profile>

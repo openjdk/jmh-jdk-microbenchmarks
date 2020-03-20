@@ -93,6 +93,11 @@
                     <artifactId>redefineagent</artifactId>
                     <version>${project.version}</version>
                 </dependency>
+                <dependency>
+                    <groupId>org.openjdk</groupId>
+                    <artifactId>micros-javac</artifactId>
+                    <version>${project.version}</version>
+                </dependency>
             </dependencies>
         </profile>
     </profiles>
