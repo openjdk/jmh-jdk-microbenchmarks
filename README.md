@@ -57,19 +57,14 @@ If you experience following exception during benchmarks execution:
 
 It is caused by recently enabled Jigsaw enforcement and micros-javac benchmarks requirement to access several jdk.compiler module private packages. 
 
-Solution is to export required packages by adding following options to the command line:
+Solution is to permit access to private packages by adding following option to the command line:
 
-	$ java --add-exports=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED \
-	--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED \
-	--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED \
-	--add-exports=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED \
-	--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED \
-	-jar target/jmh-jdk-microbenchmarks-1.0-SNAPSHOT.jar [optional jmh parameters]
+	$ java --illegal-access=permit -jar target/jmh-jdk-microbenchmarks-1.0-SNAPSHOT.jar [optional jmh parameters]
 
 ### Execution of micros-javac benchmarks takes several hours
 
 micros-javac benchmarks consist of two sets of benchmarks: 
- * `SingleJavacBenchmark` (which is parametrized) measures each single javac compilation stage in an isolated run. This benchmark is designed for exact automated performance regression testing and it takes several ours to execute completely. 
+ * `SingleJavacBenchmark` (which is parametrized) measures each single javac compilation stage in an isolated run. This benchmark is designed for exact automated performance regression testing and it takes several hours to execute completely. 
  * `GroupJavacBenchmark` is grouping the measurements of all javac compilation stages into one run and its execution should take less than 30 minutes on a regular developers computer.
 
 Solution to speed up javac benchmarking is to select only `GroupJavacBenchmark` for execution using following command line:
