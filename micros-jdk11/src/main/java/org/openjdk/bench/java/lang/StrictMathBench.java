@@ -45,7 +45,7 @@ import org.openjdk.jmh.annotations.Warmup;
 @OutputTimeUnit(TimeUnit.MILLISECONDS)
 @BenchmarkMode(Mode.Throughput)
 @State(Scope.Thread)
-public class StrictMathOps {
+public class StrictMathBench {
 
     public int int1 = 1, int2 = 2, int42 = 42, int5 = 5;
     public long long1 = 1L, long2 = 2L, long747 = 747L, long13 = 13L;
