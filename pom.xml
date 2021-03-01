@@ -75,6 +75,22 @@
             </modules>
         </profile>
         <profile>
+            <id>jdk15</id>
+            <activation>
+                <jdk>[15,)</jdk>
+            </activation>
+            <modules>
+                <module>micros-uber</module>
+                <module>micros-jdk8</module>
+                <module>micros-jdk9</module>
+                <module>micros-jdk11</module>
+                <module>micros-jdk15</module>
+                <module>micros-util</module>
+                <module>redefineagent</module>
+                <module>micros-javac</module>
+            </modules>
+        </profile>
+        <profile>
             <id>maven-3</id>
             <activation>
                 <file>
