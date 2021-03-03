@@ -33,6 +33,12 @@ import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Warmup;
 
+/**
+ * A micro-benchmark for every StrictMath API.
+ *
+ * @author Charlie Hunt
+ */
+
 @Warmup(iterations = 3, time = 5, timeUnit = TimeUnit.SECONDS)
 @Measurement(iterations = 4, time = 5, timeUnit = TimeUnit.SECONDS)
 @Fork(2)
@@ -65,6 +71,16 @@ public class StrictMathBench {
     public long  absLong() {
         return  StrictMath.abs(long13);
     }
+
+//    @Benchmark
+//    public int  absExactInt() {
+//        return  StrictMath.absExact(int2);
+//    }
+
+//    @Benchmark
+//    public long  absExactLong() {
+//        return  StrictMath.absExact(long2);
+//    }
 
     @Benchmark
     public double  acosDouble() {
@@ -125,6 +141,16 @@ public class StrictMathBench {
     public double  coshDouble() {
         return  StrictMath.cosh(double2);
     }
+
+//    @Benchmark
+//    public int  DecrementExactInt() {
+//        return  StrictMath.decrementExact(int42);
+//    }
+//
+//    @Benchmark
+//    public long  DecrementExactLong() {
+//        return  StrictMath.decrementExact(long747);
+//    }
 
     @Benchmark
     public double  expDouble() {
@@ -200,6 +226,16 @@ public class StrictMathBench {
     public double  IEEERemainderDouble() {
         return  StrictMath.IEEEremainder(double81, double4Dot1);
     }
+
+//    @Benchmark
+//    public int  IncrementExactInt() {
+//        return  StrictMath.incrementExact(int42);
+//    }
+//
+//    @Benchmark
+//    public long  IncrementExactLong() {
+//        return  StrictMath.incrementExact(long747);
+//    }
 
     @Benchmark
     public double  logDouble() {
@@ -280,6 +316,16 @@ public class StrictMathBench {
     public long  multiplyHighLongLog() {
         return  StrictMath.multiplyHigh(long747, long13);
     }
+
+//    @Benchmark
+//    public int  negateExactInt() {
+//        return  StrictMath.negateExact(int42);
+//    }
+//
+//    @Benchmark
+//    public long  negateExactLong() {
+//        return  StrictMath.negateExact(long747);
+//    }
 
     @Benchmark
     public double  nextAfterDoubleDouble() {
