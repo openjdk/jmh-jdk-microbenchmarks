@@ -33,12 +33,6 @@ import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Warmup;
 
-/**
- * A micro-benchmark for every StrictMath API.
- *
- * @author Charlie Hunt
- */
-
 @Warmup(iterations = 3, time = 5, timeUnit = TimeUnit.SECONDS)
 @Measurement(iterations = 4, time = 5, timeUnit = TimeUnit.SECONDS)
 @Fork(2)
@@ -52,7 +46,6 @@ public class StrictMathBench15 {
     public float float1 = 1.0f, float2 = 2.0f, floatNegative99 = -99.0f, float7 = 7.0f, eFloat = 2.718f;
     public double double1 = 1.0d, double2 = 2.0d, double81 = 81.0d, doubleNegative12 = -12.0d, double4Dot1 = 4.1d;
 
-
     @Benchmark
     public int  absExactInt() {
         return  StrictMath.absExact(int2);
@@ -62,7 +55,6 @@ public class StrictMathBench15 {
     public long  absExactLong() {
         return  StrictMath.absExact(long2);
     }
-
 
     @Benchmark
     public int  DecrementExactInt() {
@@ -74,7 +66,6 @@ public class StrictMathBench15 {
         return  StrictMath.decrementExact(long747);
     }
 
-
     @Benchmark
     public int  IncrementExactInt() {
         return  StrictMath.incrementExact(int42);
@@ -84,7 +75,6 @@ public class StrictMathBench15 {
     public long  IncrementExactLong() {
         return  StrictMath.incrementExact(long747);
     }
-
 
     @Benchmark
     public int  negateExactInt() {
