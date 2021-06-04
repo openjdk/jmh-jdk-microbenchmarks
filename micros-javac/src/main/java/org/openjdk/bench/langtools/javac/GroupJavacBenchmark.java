@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2020, 2021, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
  * This code is free software; you can redistribute it and/or modify it
@@ -58,7 +58,7 @@ public class GroupJavacBenchmark extends JavacBenchmark {
     @BenchmarkMode(Mode.SingleShotTime)
     @Warmup(iterations = COLD_ITERATION_WARMUPS)
     @Measurement(iterations = COLD_ITERATIONS)
-    @Fork(warmups = COLD_FORK_WARMUPS, value = COLD_FORKS)
+    @Fork(warmups = COLD_FORK_WARMUPS, value = COLD_FORKS, jvmArgsPrepend = { "--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED", "--add-exports=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED",  "--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED" })
     @OutputTimeUnit(TimeUnit.SECONDS)
     public void cold1_Init() throws InterruptedException {
         Stage.Init.waitFor();
@@ -69,7 +69,7 @@ public class GroupJavacBenchmark extends JavacBenchmark {
     @BenchmarkMode(Mode.SingleShotTime)
     @Warmup(iterations = COLD_ITERATION_WARMUPS)
     @Measurement(iterations = COLD_ITERATIONS)
-    @Fork(warmups = COLD_FORK_WARMUPS, value = COLD_FORKS)
+    @Fork(warmups = COLD_FORK_WARMUPS, value = COLD_FORKS, jvmArgsPrepend = { "--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED", "--add-exports=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED",  "--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED" })
     @OutputTimeUnit(TimeUnit.SECONDS)
     public void cold2_Parse() throws InterruptedException {
         Stage.Parse.waitFor();
@@ -80,7 +80,7 @@ public class GroupJavacBenchmark extends JavacBenchmark {
     @BenchmarkMode(Mode.SingleShotTime)
     @Warmup(iterations = COLD_ITERATION_WARMUPS)
     @Measurement(iterations = COLD_ITERATIONS)
-    @Fork(warmups = COLD_FORK_WARMUPS, value = COLD_FORKS)
+    @Fork(warmups = COLD_FORK_WARMUPS, value = COLD_FORKS, jvmArgsPrepend = { "--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED", "--add-exports=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED",  "--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED" })
     @OutputTimeUnit(TimeUnit.SECONDS)
     public void cold3_InitModules() throws InterruptedException {
         Stage.InitModules.waitFor();
@@ -91,7 +91,7 @@ public class GroupJavacBenchmark extends JavacBenchmark {
     @BenchmarkMode(Mode.SingleShotTime)
     @Warmup(iterations = COLD_ITERATION_WARMUPS)
     @Measurement(iterations = COLD_ITERATIONS)
-    @Fork(warmups = COLD_FORK_WARMUPS, value = COLD_FORKS)
+    @Fork(warmups = COLD_FORK_WARMUPS, value = COLD_FORKS, jvmArgsPrepend = { "--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED", "--add-exports=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED",  "--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED" })
     @OutputTimeUnit(TimeUnit.SECONDS)
     public void cold4_Enter() throws InterruptedException {
         Stage.Enter.waitFor();
@@ -102,7 +102,7 @@ public class GroupJavacBenchmark extends JavacBenchmark {
     @BenchmarkMode(Mode.SingleShotTime)
     @Warmup(iterations = COLD_ITERATION_WARMUPS)
     @Measurement(iterations = COLD_ITERATIONS)
-    @Fork(warmups = COLD_FORK_WARMUPS, value = COLD_FORKS)
+    @Fork(warmups = COLD_FORK_WARMUPS, value = COLD_FORKS, jvmArgsPrepend = { "--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED", "--add-exports=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED",  "--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED" })
     @OutputTimeUnit(TimeUnit.SECONDS)
     public void cold5_Attribute() throws InterruptedException {
         Stage.Attribute.waitFor();
@@ -113,7 +113,7 @@ public class GroupJavacBenchmark extends JavacBenchmark {
     @BenchmarkMode(Mode.SingleShotTime)
     @Warmup(iterations = COLD_ITERATION_WARMUPS)
     @Measurement(iterations = COLD_ITERATIONS)
-    @Fork(warmups = COLD_FORK_WARMUPS, value = COLD_FORKS)
+    @Fork(warmups = COLD_FORK_WARMUPS, value = COLD_FORKS, jvmArgsPrepend = { "--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED", "--add-exports=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED",  "--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED" })
     @OutputTimeUnit(TimeUnit.SECONDS)
     public void cold6_Flow() throws InterruptedException {
         Stage.Flow.waitFor();
@@ -124,7 +124,7 @@ public class GroupJavacBenchmark extends JavacBenchmark {
     @BenchmarkMode(Mode.SingleShotTime)
     @Warmup(iterations = COLD_ITERATION_WARMUPS)
     @Measurement(iterations = COLD_ITERATIONS)
-    @Fork(warmups = COLD_FORK_WARMUPS, value = COLD_FORKS)
+    @Fork(warmups = COLD_FORK_WARMUPS, value = COLD_FORKS, jvmArgsPrepend = { "--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED", "--add-exports=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED",  "--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED" })
     @OutputTimeUnit(TimeUnit.SECONDS)
     public void cold7_Desugar() throws InterruptedException {
         Stage.Desugar.waitFor();
@@ -135,7 +135,7 @@ public class GroupJavacBenchmark extends JavacBenchmark {
     @BenchmarkMode(Mode.SingleShotTime)
     @Warmup(iterations = COLD_ITERATION_WARMUPS)
     @Measurement(iterations = COLD_ITERATIONS)
-    @Fork(warmups = COLD_FORK_WARMUPS, value = COLD_FORKS)
+    @Fork(warmups = COLD_FORK_WARMUPS, value = COLD_FORKS, jvmArgsPrepend = { "--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED", "--add-exports=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED",  "--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED" })
     @OutputTimeUnit(TimeUnit.SECONDS)
     public void cold8_Generate(Blackhole bh) throws IOException {
         compile(bh, Stage.Generate);
@@ -146,7 +146,7 @@ public class GroupJavacBenchmark extends JavacBenchmark {
     @BenchmarkMode(Mode.SingleShotTime)
     @Warmup(iterations = HOT_ITERATION_WARMUPS)
     @Measurement(iterations = HOT_ITERATIONS)
-    @Fork(warmups = HOT_FORK_WARMUPS, value = HOT_FORKS)
+    @Fork(warmups = HOT_FORK_WARMUPS, value = HOT_FORKS, jvmArgsPrepend = { "--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED", "--add-exports=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED",  "--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED" })
     @OutputTimeUnit(TimeUnit.SECONDS)
     public void hot1_Init() throws InterruptedException {
         Stage.Init.waitFor();
@@ -157,7 +157,7 @@ public class GroupJavacBenchmark extends JavacBenchmark {
     @BenchmarkMode(Mode.SingleShotTime)
     @Warmup(iterations = HOT_ITERATION_WARMUPS)
     @Measurement(iterations = HOT_ITERATIONS)
-    @Fork(warmups = HOT_FORK_WARMUPS, value = HOT_FORKS)
+    @Fork(warmups = HOT_FORK_WARMUPS, value = HOT_FORKS, jvmArgsPrepend = { "--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED", "--add-exports=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED",  "--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED" })
     @OutputTimeUnit(TimeUnit.SECONDS)
     public void hot2_Parse() throws InterruptedException {
         Stage.Parse.waitFor();
@@ -168,7 +168,7 @@ public class GroupJavacBenchmark extends JavacBenchmark {
     @BenchmarkMode(Mode.SingleShotTime)
     @Warmup(iterations = HOT_ITERATION_WARMUPS)
     @Measurement(iterations = HOT_ITERATIONS)
-    @Fork(warmups = HOT_FORK_WARMUPS, value = HOT_FORKS)
+    @Fork(warmups = HOT_FORK_WARMUPS, value = HOT_FORKS, jvmArgsPrepend = { "--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED", "--add-exports=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED",  "--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED" })
     @OutputTimeUnit(TimeUnit.SECONDS)
     public void hot3_InitModules() throws InterruptedException {
         Stage.InitModules.waitFor();
@@ -179,7 +179,7 @@ public class GroupJavacBenchmark extends JavacBenchmark {
     @BenchmarkMode(Mode.SingleShotTime)
     @Warmup(iterations = HOT_ITERATION_WARMUPS)
     @Measurement(iterations = HOT_ITERATIONS)
-    @Fork(warmups = HOT_FORK_WARMUPS, value = HOT_FORKS)
+    @Fork(warmups = HOT_FORK_WARMUPS, value = HOT_FORKS, jvmArgsPrepend = { "--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED", "--add-exports=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED",  "--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED" })
     @OutputTimeUnit(TimeUnit.SECONDS)
     public void hot4_Enter() throws InterruptedException {
         Stage.Enter.waitFor();
@@ -190,7 +190,7 @@ public class GroupJavacBenchmark extends JavacBenchmark {
     @BenchmarkMode(Mode.SingleShotTime)
     @Warmup(iterations = HOT_ITERATION_WARMUPS)
     @Measurement(iterations = HOT_ITERATIONS)
-    @Fork(warmups = HOT_FORK_WARMUPS, value = HOT_FORKS)
+    @Fork(warmups = HOT_FORK_WARMUPS, value = HOT_FORKS, jvmArgsPrepend = { "--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED", "--add-exports=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED",  "--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED" })
     @OutputTimeUnit(TimeUnit.SECONDS)
     public void hot5_Attribute() throws InterruptedException {
         Stage.Attribute.waitFor();
@@ -201,7 +201,7 @@ public class GroupJavacBenchmark extends JavacBenchmark {
     @BenchmarkMode(Mode.SingleShotTime)
     @Warmup(iterations = HOT_ITERATION_WARMUPS)
     @Measurement(iterations = HOT_ITERATIONS)
-    @Fork(warmups = HOT_FORK_WARMUPS, value = HOT_FORKS)
+    @Fork(warmups = HOT_FORK_WARMUPS, value = HOT_FORKS, jvmArgsPrepend = { "--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED", "--add-exports=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED",  "--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED" })
     @OutputTimeUnit(TimeUnit.SECONDS)
     public void hot6_Flow() throws InterruptedException {
         Stage.Flow.waitFor();
@@ -212,7 +212,7 @@ public class GroupJavacBenchmark extends JavacBenchmark {
     @BenchmarkMode(Mode.SingleShotTime)
     @Warmup(iterations = HOT_ITERATION_WARMUPS)
     @Measurement(iterations = HOT_ITERATIONS)
-    @Fork(warmups = HOT_FORK_WARMUPS, value = HOT_FORKS)
+    @Fork(warmups = HOT_FORK_WARMUPS, value = HOT_FORKS, jvmArgsPrepend = { "--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED", "--add-exports=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED",  "--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED" })
     @OutputTimeUnit(TimeUnit.SECONDS)
     public void hot7_Desugar() throws InterruptedException {
         Stage.Desugar.waitFor();
@@ -223,7 +223,7 @@ public class GroupJavacBenchmark extends JavacBenchmark {
     @BenchmarkMode(Mode.SingleShotTime)
     @Warmup(iterations = HOT_ITERATION_WARMUPS)
     @Measurement(iterations = HOT_ITERATIONS)
-    @Fork(warmups = HOT_FORK_WARMUPS, value = HOT_FORKS)
+    @Fork(warmups = HOT_FORK_WARMUPS, value = HOT_FORKS, jvmArgsPrepend = { "--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED", "--add-exports=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED",  "--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED" })
     @OutputTimeUnit(TimeUnit.SECONDS)
     public void hot8_Generate(Blackhole bh) throws IOException {
         compile(bh, Stage.Generate);

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2020, 2021, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
  * This code is free software; you can redistribute it and/or modify it
@@ -50,7 +50,7 @@ public class SingleJavacBenchmark extends JavacBenchmark {
     @BenchmarkMode(Mode.SingleShotTime)
     @Warmup(iterations = 0)
     @Measurement(iterations = 1)
-    @Fork(warmups = 1, value = 15)
+    @Fork(warmups = 1, value = 15, jvmArgsPrepend = { "--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED", "--add-exports=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED",  "--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED" })
     @OutputTimeUnit(TimeUnit.SECONDS)
     public void compileCold(Blackhole bh) throws IOException {
         compile(bh, stopStage);
@@ -61,7 +61,7 @@ public class SingleJavacBenchmark extends JavacBenchmark {
     @BenchmarkMode(Mode.SingleShotTime)
     @Warmup(iterations = 8)
     @Measurement(iterations = 10)
-    @Fork(warmups = 0, value = 1)
+    @Fork(warmups = 0, value = 1, jvmArgsPrepend = { "--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED", "--add-exports=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED",  "--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED" })
     @OutputTimeUnit(TimeUnit.SECONDS)
     public void compileHot(Blackhole bh) throws IOException {
         compile(bh, stopStage);
