@@ -22,7 +22,7 @@
 ;
 
 [general]
-project=code-tools
+project=jdk
 repository=jmh-jdk-microbenchmarks
 jbs=codetools
 
